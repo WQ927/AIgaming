@@ -1,0 +1,25 @@
+class Transistor:
+    def __init__(self):
+        self.base_voltage = 0
+        self.emitter_voltage = 0
+        self.collector_voltage = 0
+
+    def set_base_voltage(self, voltage):
+        self.base_voltage = voltage
+
+    def simulate(self):
+        if self.base_voltage > 0.7:
+            self.emitter_voltage = 0.7
+            self.collector_voltage = 5.0
+        else:
+            self.emitter_voltage = 0.0
+            self.collector_voltage = 0.0
+
+
+# Example usage
+transistor = Transistor()
+transistor.set_base_voltage(0.8)
+transistor.simulate()
+
+print("Emitter Voltage:", transistor.emitter_voltage)
+print("Collector Voltage:", transistor.collector_voltage)
